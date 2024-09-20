@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>전체 도서 조회</title>
+</head>
+<body>
+	<h1 align ="center">전체 도서 조회</h1>
+	<table align="center" border="1">
+		<tr>
+			<th width = "150">
+				아이디
+			<th width = "150">
+				이름
+			<!-- <th width = "150">
+				출판사
+			<th width = "150"> 
+				가격 -->
+			</th>
+		</tr>
+		
+		<tr th:each="book : ${allBook}">
+			<td>
+				<a 
+					th:href="@{/selectBook(bookid=${book.bookid})}"
+					th:text=" '책아이디' + ${book.bookid} + '조회!!'">
+				</a>	
+			</td>		
+			
+			<td th:text="${book.bookname}">
+			</td>	
+			<!-- <td th:text="${book.publisher}">
+			</td>	
+			<td th:text="${book.price}">
+			</td> -->
+		</tr>		
+	</table>
+	
+	<p align ="center">
+		<a th:href="@{/insertBookForm}"
+			th:text=" '책 추가 화면 이동~' ">
+		</a>
+	</p>		
+</body>
+</html>

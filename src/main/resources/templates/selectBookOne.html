@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p th:text="'도서 아이디: ' + ${book.bookid}"></p>
+	<p th:text="'도서 이름: ' + ${book.bookname}"></p>
+	<p th:text="'도서 가격: ' + ${book.price}"></p>
+	<p th:text="'출판사: ' + ${book.publisher}"></p>
+	
+	<p align ="center">
+		<a href="/updateBookForm?bookid=9">
+		<td	th:text="'책 아이디' + ${book.bookid} + '수정!!!'">
+		</a>
+	</p>		
+</body>
+</html>
